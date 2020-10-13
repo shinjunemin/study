@@ -1,0 +1,30 @@
+spring:
+  thymeleaf:
+      enabled: true
+      prefix : classpath:templates/
+      suffix : .html
+      cache : false
+      encoding: UTF-8
+      view-names: thymeleaf/*
+  datasource:
+    schema:
+    - classpath:schema/create.sql
+    data:
+    - classpath:schema/insert.sql
+    hikari:
+      jdbc-url: jdbc:h2:mem:testdb;MODE=MySQL;DB_CLOSE_DELAY=-1
+      driver-class-name: org.h2.Driver
+      username: sa
+      password: sa
+      
+mybatis:
+  configuration:
+    map-underscore-to-camel-case: true
+  mapper-locations:
+  - classpath:mapper/**/*Mapper.xml
+  
+logging:
+  level:
+    org.springframework: INFO
+    org.springframework.web: DEBUG
+    kr.co.study: DEBUG
