@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorator="thymeleaf/layout/main">
+
+<!-- page Css
+<th:block layout:fragment="pageCss"><link rel="stylesheet" th:href="@{/css/page/home.css}"></th:block>-->
+
+<!-- page 스크립트 -->
+<body>
+<main layout:fragment="page" role="main" class="flex-shrink-0">
+	<div class="container">
+	<form id="frm" action="#" th:action="@{/userSave}" th:object="${joinDTO}" method="post">
+		<h1>회원가입</h1>
+		<div class="form-group">
+		    <label for="ID">ID</label>
+		    <input type="text" class="form-control" th:field="*{id}" th:class="${#fields.hasErrors('id')}? form-control : form-control" />
+		    <label class="err" th:if="${#fields.hasErrors('id')}" th:errors="*{id}">ID Error</label>
+		</div>
+
+		<div class="form-group">
+		    <label for="NAME">NAME</label>
+		    <input type="text" class="form-control" th:field="*{name}" th:class="${#fields.hasErrors('name')}? form-control : form-control" />
+		    <label class="err" th:if="${#fields.hasErrors('name')}" th:errors="*{name}">NAME Error</label>
+		</div>
+
+		<div class="form-group">
+		    <label for="PASSWORD">PASSWORD</label>
+		    <input type="text" class="form-control" th:field="*{password}" th:class="${#fields.hasErrors('password')}? form-control : form-control" />
+		    <label class="err" th:if="${#fields.hasErrors('password')}" th:errors="*{password}">PASSWORD Error</label>
+		</div>
+
+		<button type="submit" class="btn btn-primary">SAVE</button>
+	</form>
+	</div>
+</main>
+</body>
+</html>

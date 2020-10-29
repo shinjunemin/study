@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" lang="ko">
+
+<th:block th:fragment="commonFragment">
+	<!-- 전역 -->
+    <link rel="stylesheet" media="screen" th:href="@{/webjars/bootstrap/4.5.2/css/bootstrap.min.css}">
+    <link rel="stylesheet" media="screen" th:href="@{/css/main.css}">
+
+    <script th:src="@{/webjars/jquery/3.5.1/jquery.min.js}"></script>
+    <script th:src="@{/webjars/popper.js/1.16.0/popper.min.js}"></script>
+    <script th:src="@{/webjars/bootstrap/4.5.2/js/bootstrap.min.js}"></script>
+
+    <!-- page css / script -->
+    <th:block layout:fragment="pageCss"></th:block>
+    <th:block layout:fragment="pageScript"></th:block>
+
+	<!-- const : 자바에서 상수와 같은 의미   
+		let : 한번 선언 해놓으면 바꿀 수 없음
+	-->
+	<script th:inline="javascript">
+	const CONTEXTPATH = /*[[@{/}]]*/ "write down your context-path";
+	</script>
+</th:block>
+
+</html>

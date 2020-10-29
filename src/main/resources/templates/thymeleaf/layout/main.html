@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" lang="ko" class="h-100">
+<head>
+	<meta charset="UTF-8">
+	<title>Study Project</title>
+	<th:block th:replace="~{ thymeleaf/fragment/common :: commonFragment }"></th:block>
+</head>
+
+<body class="d-flex flex-column h-100">
+    <th:block th:replace="~{ thymeleaf/fragment/header :: headerFragment }"></th:block>
+
+    <th:block layout:fragment="page"></th:block>
+
+    <th:block th:replace="~{ thymeleaf/fragment/footer :: footerFragment }"></th:block>
+</body>
+
+</html>
